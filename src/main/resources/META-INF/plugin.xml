@@ -1,18 +1,12 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.zhonghongfly.beforelaunchideaplugin</id>
-    <name>IntelliJ Platform Plugin before-launch-idea-plugin</name>
+    <id>com.zhonghong.beforelaunch</id>
+    <name>Before-Launch</name>
     <vendor>zhonghongfly</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.zhonghongfly.beforelaunchideaplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.zhonghongfly.beforelaunchideaplugin.services.MyProjectService"/>
+        <configurationType implementation="com.zhonghong.beforelaunch.BeforeLaunchRunConfigurationType" id="BeforeLaunch" />
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.zhonghongfly.beforelaunchideaplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
